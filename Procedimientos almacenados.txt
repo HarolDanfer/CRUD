@@ -1,0 +1,43 @@
+--Mostrar los registros de la tabla alumno
+CREATE PROCEDURE sp_MostrarAlumnos
+AS 
+SELECT *
+FROM Alumnos
+
+
+--Ingresar alumnos a la tabla
+CREATE PROCEDURE sp_IngresarAlumnos
+@IDAlumno int,
+@Nombre nchar(10) ,
+@Edad int 
+ AS 
+ INSERT INTO Alumnos 
+  VALUES (@IDAlumno,@Nombre,@Edad)
+
+--Buscar alumnos por su nombre
+ CREATE PROCEDURE sp_BuscarAlumnos
+@Nombre nchar(10)
+ AS 
+ SELECT *
+ FROM Alumnos
+ WHERE Nombre=@Nombre
+
+ --Eliminar alumnos por su id
+ CREATE PROCEDURE sp_EliminarAlumnos
+@IDAlumnos int 
+AS 
+DELETE FROM Alumnos
+WHERE IDAlumno=@IDAlumnos 
+
+ 
+
+--Actulizar registros
+CREATE PROCEDURE sp_ActualizarAlumnos
+@IDAlumno int,
+@Nombre nchar(10) ,
+@Edad int 
+ AS 
+ UPDATE Alumnos
+ SET Nombre=@Nombre,
+ Edad=@Edad
+ WHERE IDAlumno=@IDAlumno

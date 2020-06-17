@@ -1,0 +1,11 @@
+CREATE TABLE dbo.Alumnos
+	(
+	IDAlumno int NOT NULL,
+	Nombre nchar(10) NOT NULL,
+	Edad int NULL
+	)
+
+Insert into Alumnos values(101,'juan',18)
+Insert into Alumnos values(102,'maria',20)
+Insert into Alumnos values(103,'pedro',19)
+Insert into Alumnos values(104,'carlos',18)
